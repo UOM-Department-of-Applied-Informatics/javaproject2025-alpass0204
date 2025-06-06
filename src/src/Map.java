@@ -277,5 +277,20 @@ public class Map {
 
     }
 
+    public char getTerrain(int x, int y) {
+        return grid[y][x];
+    }
+
+    public String getStatsString() {
+        int sumKnights = knights.stream().mapToInt(Knight::getHealth).sum();
+        int sumMonsters = monsters.stream().mapToInt(Monster::getHealth).sum();
+        return "Available Knights: " + knights.size() +
+                "\nAvailable Monsters: " + monsters.size() +
+                "\nTotal health Knights: " + sumKnights +
+                "\nTotal health Monsters: " + sumMonsters;
+    }
+
+
+
 
 }

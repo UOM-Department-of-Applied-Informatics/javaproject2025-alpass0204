@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +17,10 @@ public class Main {
         sc.nextLine();
 
         Map map = new Map(width, height, numFighters);
+        SwingUtilities.invokeLater(() -> new GameGUI(map));
 
+        //Από εδώ και κάτω είναι η εκτέλεση χωρίς το GUI!
+        /**
         boolean running = true;
         while (running) {
             map.printWorld();
@@ -55,6 +59,7 @@ public class Main {
                 break;
             }
         }
+         **/
     }
 
 }
